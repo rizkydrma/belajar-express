@@ -5,7 +5,7 @@ const app = express()
 const router = require('./routes/router')
 
 
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended: true}))
 app.use('/', router)
 
 // INIT MIDDLEWARE

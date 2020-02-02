@@ -1,5 +1,6 @@
 const model = require('../models')
 
+
 function createUser(req, res){
     model.User.create({
         user: req.body.user,
@@ -14,15 +15,7 @@ function createUser(req, res){
     })
 }
 
-function readUser(req, res){
-    model.User.findAll()
-        .then(result => {
-            res.json(result)
-        })
-        .catch(error => {
-            res.json({error: error})
-        })
-}
+
 
 function updateUser(req, res){
     model.User.update({
@@ -56,14 +49,43 @@ function deleteUser(req, res){
     })
 }
 
+function readUser(req, res){
+    if(req.query){
+        model.User.findAll({
+            where: req.query
+        })
+        .then(result => {
+            res.json(result)
+        })
+        .catch(error => {
+            res.json({error: error})
+        })
+    }else{
+        model.User.findAll()
+        .then(result => {
+            res.json(result)
+        })
+        .catch(error => {
+            res.json({error: error})
+        })
+    }
+}
 // CARI USER BERDASARKAN ID
-// function findUserById(req, res){
-
-// }
+function findUserById(req, res){
+    model.User.findAll({
+        where: req.query
+    })
+    .then(result => {
+        res.json(result)
+    })
+    .catch(error => {
+        res.json({error: error})
+    })
+}
 
 module.exports = {
     createUser,
     readUser,
     updateUser,
-    deleteUser,
+    deleteUser
 }
