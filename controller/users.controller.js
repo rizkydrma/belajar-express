@@ -7,7 +7,7 @@ function createUser(req, res){
         active: req.body.active
     })
     .then(result => {
-        res.json(result)
+        res.redirect('/')
     })
     .catch(error => {
         res.json({error: error})
