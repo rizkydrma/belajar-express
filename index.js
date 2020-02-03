@@ -4,11 +4,13 @@ const exphbs = require('express-handlebars')
 const logger = require('./middleware/logger')
 const app = express()
 const router = require('./routes/router')
-
+const cors = require('cors')
 
 // INIT MIDDLEWARE
 // app.use(logger)
 
+// CORS
+app.use(cors())
 // HANDLEBARS MIDDLEWARE
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
@@ -19,7 +21,7 @@ app.use('/', router)
 
 // HOME PAGE ROUTE
 app.get('/', (req, res) => res.render('index', {
-        title: "CRUD User App"
+        title: "Create User"
     })
 )
 
