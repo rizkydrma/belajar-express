@@ -1,7 +1,7 @@
 <h2 class="text-center">{{title}}</h2>
 <form action="/api/users" method="POST">
   <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-md-6 col-sm-12">
       <div class="form-group">
         <label for="username">User name</label>
         <input type="text" name="user" class="form-control" id="username">
@@ -9,13 +9,13 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-3">
+    <div class="col-md-3 col-sm-6">
       <div class="form-group">
         <label for="age">Age</label>
         <input type="text" name="age" class="form-control" id="age">
       </div>
     </div>
-    <div class="col-3">
+    <div class="col-md-3 col-sm-6">
       <div class="form-group">
         <label for="active">Active</label>
         <select class="form-control" id="active" name="active">
@@ -26,13 +26,13 @@
     </div>
   </div>
   <div class="row justify-content-center mb-3">
-    <div class="col-6">
+    <div class="col-md-6 col-sm-12">
       <button type="submit" class="btn btn-primary btn-block">Simpan</button>
     </div>
   </div>
 </form>
 
-<div class="row justify-content-center">
+{{!-- <div class="row justify-content-center">
   <div class="col-8">
     <table class="table text-center">
       <thead>
@@ -61,4 +61,4 @@
   </div>
 </div>
 
-<p>{{data}}</p>
+<p>{{data}}</p> --}}
